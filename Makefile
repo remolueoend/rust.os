@@ -2,10 +2,10 @@ arch ?= x86_64
 kernel := build/kernel-$(arch).bin
 iso := build/rust.os-$(arch).iso
 
-linker_script := arch/$(arch)/linker.ld
-grub_cfg := arch/$(arch)/grub.cfg
-assembly_src_files := $(wildcard arch/$(arch)/src/*.asm)
-assembly_obj_files := $(patsubst arch/$(arch)/src/%.asm, \
+linker_script := src/$(arch)/linker.ld
+grub_cfg := src/$(arch)/grub.cfg
+assembly_src_files := $(wildcard src/$(arch)/*.asm)
+assembly_obj_files := $(patsubst src/$(arch)/%.asm, \
 	build/arch/$(arch)/%.o, $(assembly_src_files))
 
 .PHONY: all clean run iso
@@ -30,6 +30,6 @@ $(iso): $(kernel) $(grub_cfg)
 $(kernel): $(assembly_obj_files) $(linker_script)
 	@ld -n -T $(linker_script) -o $(kernel) $(assembly_obj_files)
 
-build/arch/$(arch)/%.o: arch/$(arch)/src/%.asm
+build/arch/$(arch)/%.o: src/$(arch)/%.asm
 	@mkdir -p $(shell dirname $@)
 	@nasm -f elf64 $< -o $@

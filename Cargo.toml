@@ -1,0 +1,8 @@
+[package]
+name = "rust.os"
+version = "0.0.1"
+authors = ["Remo Zumsteg <remolueoend@users.noreply.github.com>"]
+
+[lib]
+create-type = ["static-lib"]
+path = "src/lib.rs"

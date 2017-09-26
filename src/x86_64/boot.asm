@@ -93,7 +93,7 @@ setup_page_tables:
   mov ecx, 0         ; counter variable
 
 .map_p2_table:
-  ; map ecx-th P2 entry to a huge page that starts at 2mib*ecx
+  ; map ecx-th P2 entry to a huge page that starts atP 2mib*ecx
   mov eax, 0x200000  ; 2MiB
   mul ecx            ; start address of ecx-th page
   or eax, 0b10000011 ; present + writable + huge
