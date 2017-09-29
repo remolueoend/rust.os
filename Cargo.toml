@@ -1,5 +1,5 @@
 [package]
-name = "rust.os"
+name = "rust_os"
 version = "0.0.1"
 authors = ["Remo Zumsteg <remolueoend@users.noreply.github.com>"]
 
