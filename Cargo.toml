@@ -5,6 +5,7 @@ authors = ["Remo Zumsteg <remolueoend@users.noreply.github.com>"]
 edition = "2018"
 
 [dependencies]
+bootloader = "0.6.0"
 
 # the profile used for `cargo build`
 [profile.dev]
