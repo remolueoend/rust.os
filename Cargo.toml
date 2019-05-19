@@ -2,10 +2,14 @@
 name = "rust_os"
 version = "0.0.1"
 authors = ["Remo Zumsteg <remolueoend@users.noreply.github.com>"]
+edition = "2018"
 
 [dependencies]
-rlibc = "1.0"
 
-[lib]
-create-type = ["static-lib"]
-path = "src/lib.rs"
+# the profile used for `cargo build`
+[profile.dev]
+# panic = "abort" # disable stack unwinding on panic
+
+# the profile used for `cargo build --releases`
+[profile.release]
+# panic = "abort" # disable stack unwinding on panic
