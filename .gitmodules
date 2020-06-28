@@ -1,6 +1,0 @@
-[submodule "tools/grub"]
-	path = tools/grub
-	url = git://git.savannah.gnu.org/grub.git
-[submodule "tools/objconv"]
-	path = tools/objconv
-	url = git@github.com:vertis/objconv.git
